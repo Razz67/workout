@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-// react to requests from (Routes)
+// register all requests from (Routes)
 app.use("/api/workouts", workoutsRoute);
 
 // Connect to MONGO_DB
