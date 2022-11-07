@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 require("dotenv").config();
 const workoutsRoute = require("./routes/workoutRouter");
 
@@ -10,8 +11,8 @@ const app = express();
 // any request that comes in, it will parse the body and put it on req.body
 app.use(express.json());
 
+// Just to see requests path and method in the console
 app.use((req, res, next) => {
-	// see requests path and method in the console
 	console.log(req.path, req.method);
 	next();
 });
@@ -19,7 +20,15 @@ app.use((req, res, next) => {
 // react to requests from (Routes)
 app.use("/api/workouts", workoutsRoute);
 
-// Listen for requests(port 5000)
-app.listen(process.env.PORT, () => {
-	console.log("Listening on port ", process.env.PORT);
-});
+// Connect to MONGO_DB
+mongoose
+	.connect(process.env.MONGO_DB)
+	.then(() => {
+		// Then listen for requests(port 5000)
+		app.listen(process.env.PORT, () => {
+			console.log("Connected to Mongo_Db and Listening on port ", process.env.PORT);
+		});
+	})
+	.catch((err) => {
+		console.log(err);
+	});
