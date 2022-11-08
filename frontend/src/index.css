@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -44,14 +49,14 @@ a.nav-link:hover {
 }
 
 button.navbar-toggler {
-  border: 2px solid var(--bs-teal);
-  color: #fff;
+  border: 3px solid var(--bs-teal);
+  background-color: #fff;
 }
 
 /* Home Page */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 100px
 }
 
@@ -64,7 +69,7 @@ button.navbar-toggler {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.workout-details h5 {
+.workout-details h4 {
   margin-bottom: 10px;
   font-size: 1.2em;
   color: var(--bs-teal);
@@ -85,4 +90,120 @@ button.navbar-toggler {
   padding: 5px;
   border-radius: 50%;
   color: #333;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--bs-teal);
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a,
+nav button {
+  margin-left: 10px;
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* auth forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Video Background */
+.video-background-holder {
+  position: relative;
+  background-color: black;
+  height: calc(100vh - 72px);
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-background-holder video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-background-content {
+  position: relative;
+  z-index: 2;
+}
+
+.video-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1;
 }
