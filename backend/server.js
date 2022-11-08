@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const workoutsRoute = require("./routes/workoutRouter");
+const cors = require("cors");
+
 
 // Create express app
 const app = express();
@@ -10,7 +12,7 @@ const app = express();
 // allows us to use json returned from the request in our routes
 // any request that comes in, it will parse the body and put it on req.body
 app.use(express.json());
-
+app.use(cors());
 // Just to see requests path and method in the console
 app.use((req, res, next) => {
 	console.log(req.path, req.method);

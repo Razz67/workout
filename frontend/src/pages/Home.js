@@ -1,10 +1,27 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-    return (
-        <div className="home">
+    const [workouts, setWorkouts] = useState([]);
 
-        </div>
-    )
-}
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/workouts')
+        .then((data) => {
+            console.log(data);
+            setWorkouts(data?.data);
+        });
+    }, []);
 
-export default Home
+
+	return (
+		<div className="home">
+			<div className="workouts">
+				{workouts &&
+					workouts.map((workout) => 
+                    <p key={workout._id}>{workout.title}</p>)}
+			</div>
+		</div>
+	);
+};
+
+export default Home;
