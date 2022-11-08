@@ -1,9 +1,31 @@
-div.navbar-brand {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #f8f9fa;
+}
+
+h1.brand {
   color: #fff;
 }
 
+h1.brand a {
+  text-decoration: none;
+}
+
+
 a.nav-link {
-  color: #fff;
+  color: rgb(30, 238, 110);
   font-size: 1.3em;
 }
 
@@ -12,11 +34,16 @@ a.nav-link.active {
 }
 
 a.nav-link:hover {
-  color: var(--bs-teal);
+  color: var(--bs-purple);
 }
 
-
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
 
 button.navbar-toggler {
+  border: 2px solid var(--bs-teal);
   color: #fff;
 }

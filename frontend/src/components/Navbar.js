@@ -5,15 +5,25 @@ import Nav from "react-bootstrap/Nav";
 
 function MyNavbar() {
 	return (
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="dark" expand="lg">
 			<Container>
-				<Navbar.Brand to='/'>Work It Out</Navbar.Brand>
+				<Navbar.Brand>
+					<Link to='/'>
+					<h1 className="brand">Work It Out</h1>
+					</Link>
+				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Link to="/music">Muzik</Link>
-						<Link to="/login">Login</Link>
-						<Link to="signup">Sign Up</Link>
+						<Link to="/music" className="nav-link">
+							Muzik
+						</Link>
+						<Link to="/login" className="nav-link">
+							Login
+						</Link>
+						<Link to="signup" className="nav-link">
+							Sign Up
+						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

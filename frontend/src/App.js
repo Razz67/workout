@@ -5,18 +5,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Pages && Components
 import Home from './pages/Home';
+import MyNavbar from './components/Navbar';
 
 function App() {
   return (
 		<div className="App">
 			<Router>
+			<MyNavbar />
 				<div className="pages">
 					<Routes>
 					<Route
 						path="/"
 						element={<Home />} 
 					/>
-						
 					</Routes>
 				</div>
 			</Router>
