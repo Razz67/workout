@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import MediaComponent from "../components/Media";
 
 // components
 import {WorkoutDetails} from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
+import '../components/styles/home.css'
 
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
@@ -22,15 +24,22 @@ const Home = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="home">
-			<div className="workouts">
-				{workouts &&
-					workouts.map((workout) => (
-						<WorkoutDetails workout={workout} key={workout._id} />
-					))}
+		<div className="video-holder">
+			<div className="video-overlay">
+				<div className="video-content container h-100">
+					<MediaComponent />
+				</div>
 			</div>
-			<WorkoutForm />
-		</div>
+				<div className="home">
+					<div className="workouts">
+						{workouts &&
+							workouts.map((workout) => (
+								<WorkoutDetails workout={workout} key={workout._id} />
+							))}
+					</div>
+					<WorkoutForm />
+					</div>
+				</div>
 	);
 };
 
