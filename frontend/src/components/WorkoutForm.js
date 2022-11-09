@@ -2,71 +2,73 @@ import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 const WorkoutForm = () => {
-
-	// dispatch once the response is ok(line 39)
 	const { dispatch } = useWorkoutsContext();
 
-	// Create State
 	const [title, setTitle] = useState("");
-	const [reps, setReps] = useState("");
 	const [load, setLoad] = useState("");
+	const [reps, setReps] = useState("");
 	const [error, setError] = useState(null);
+	const [empty, setEmpty] = useState([]);
 
-	// Create a function to handle the submit
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const workout = { title, reps, load };
+		const workout = { title, load, reps };
 
-		// Send the workout to the database(axios)
 		const response = await fetch("http://localhost:5000/api/workouts", {
-            method: "POST",
-            body: JSON.stringify(workout),
-            headers: { "Content-Type": "application/json" 
-        },
-	});
-    const json = await response.json();
+			method: "POST",
+			body: JSON.stringify(workout),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+		const json = await response.json();
 
-    if (!response.ok) {
-        setError(json.error);
-    }
-    if (response.ok) {
-        setTitle("");
-        setReps("");
-        setLoad("");
-        setError(null);
-        console.log('Workout added');
-		dispatch({ type: "CREATE_WORKOUT", payload: json });
-    }
-};
+		if (!response.ok) {
+			setError(json.error);
+			setEmpty(json.empty);
+		}
+
+		if (response.ok) {
+			setEmpty([]);
+			setError(null);
+			setTitle("");
+			setLoad("");
+			setReps("");
+			dispatch({ type: "CREATE_WORKOUT", payload: json });
+		}
+	};
 
 	return (
 		<form className="create" onSubmit={handleSubmit}>
-			<h2>Create a Workout</h2>
+			<h3>Add a New Workout</h3>
 
-			<label>Workout Title:</label>
+			<label>Excersize Title:</label>
 			<input
 				type="text"
 				onChange={(e) => setTitle(e.target.value)}
 				value={title}
+				className={empty.includes("title") ? "error" : ""}
 			/>
 
-			<label>Load (in lbs):</label>
+			<label>Load (in kg):</label>
 			<input
 				type="number"
 				onChange={(e) => setLoad(e.target.value)}
 				value={load}
+				className={empty.includes("load") ? "error" : ""}
 			/>
 
-			<label>Reps:</label>
+			<label>Number of Reps:</label>
 			<input
 				type="number"
 				onChange={(e) => setReps(e.target.value)}
 				value={reps}
+				className={empty.includes("reps") ? "error" : ""}
 			/>
 
 			<button>Add Workout</button>
-            {error && <div className="error">{error}</div>}
+			{error && <div className="error">{error}</div>}
 		</form>
 	);
 };
