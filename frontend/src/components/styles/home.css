@@ -6,6 +6,23 @@
     padding: 20px;
     color: #fff;
 }
+
+header {
+    margin-bottom: 30px;
+}
+
+#pumped {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ff0000;
+}
+
+#pumped:hover{
+    color: var(--primary);
+    font-size: 380%;
+}
 .card-title {
     color: #000;
 }

@@ -18,6 +18,14 @@ input {
     box-sizing: border-box;
 }
 
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+.material-symbols-outlined:hover {
+    background-color: var(--error);
+}
+
 form button {
     background: var(--primary);
     border: 0;

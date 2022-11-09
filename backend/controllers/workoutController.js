@@ -36,7 +36,7 @@ const getOneWorkout = async (req, res) => {
 
 // POST a workout to the database
 const createWorkout = async (req, res) => {
-	const { title, reps, load } = req.body;
+	const { title, reps, load, sets } = req.body;
 
 	let empty = []
 
@@ -52,6 +52,10 @@ const createWorkout = async (req, res) => {
 		empty.push('reps')
 	}
 
+	if(!sets) {
+		empty.push('sets')
+	}
+
 	if(empty.length > 0) {
 		return res.status(400).json({error: "Please fill all fields", empty})
 	}
@@ -62,6 +66,7 @@ const createWorkout = async (req, res) => {
 			title,
 			reps,
 			load,
+			sets
 		});
 		res.status(200).json(workout);
 	} catch (error) {

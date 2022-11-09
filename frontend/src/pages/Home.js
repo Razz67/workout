@@ -24,12 +24,19 @@ const Home = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="video-holder">
-			<div className="video-overlay">
-				<div className="video-content container h-100">
-					<MediaComponent />
+		<>
+			<header className="heading" style={{ textAlign: "center" }}>
+				<h1>Welcome to Work It Out</h1>
+				<p>
+					Where you can get your groove on and <span id="pumped"><strong>pump</strong></span> up the jams
+				</p>
+			</header>
+			<div className="video-holder">
+				<div className="video-overlay">
+					<div className="video-content container h-100">
+						<MediaComponent />
+					</div>
 				</div>
-			</div>
 				<div className="home">
 					<div className="workouts">
 						{workouts &&
@@ -37,9 +44,11 @@ const Home = () => {
 								<WorkoutDetails workout={workout} key={workout._id} />
 							))}
 					</div>
+
 					<WorkoutForm />
-					</div>
 				</div>
+			</div>
+		</>
 	);
 };
 
