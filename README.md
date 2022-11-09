@@ -23,6 +23,7 @@
         <li>Delete a workout: router.delete('/':id)</li>
     </ul>
     </li>
+
     <li>Set up MongoDB</li>
     <li>Set up Schema</li>
     <li>create workoutRouter.js</li>
@@ -39,7 +40,8 @@
 </ul>
 
 <h2>Home Screen layout</h2>
-<img src="assets/homescreen.png" alt="home screen" />
+
+![homescreen](https://user-images.githubusercontent.com/6307334/200939804-3614805b-0ac2-474d-a94b-f8949a3f47b6.png)
 
 <h3>Implement Authentication</h3>
 <ol>
