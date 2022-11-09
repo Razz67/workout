@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const workoutsRoute = require("./routes/workoutRouter");
+const userRoutes = require("./routes/userRoute");
 const cors = require("cors");
 
 
@@ -13,6 +14,7 @@ const app = express();
 // any request that comes in, it will parse the body and put it on req.body
 app.use(express.json());
 app.use(cors());
+
 // Just to see requests path and method in the console
 app.use((req, res, next) => {
 	console.log(req.path, req.method);
@@ -21,6 +23,7 @@ app.use((req, res, next) => {
 
 // register all requests from (Routes)
 app.use("/api/workouts", workoutsRoute);
+app.use("/api/user", userRoutes);
 
 // Connect to MONGO_DB
 mongoose

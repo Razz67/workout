@@ -37,6 +37,7 @@
     <li>Use Axios to get data from models</li>
     <li>Created a form</li>
     <li>Add functionality for CRUD operations and state management</li>
+    <li>Styled the home page</li>
 </ul>
 
 <h2>Home Screen layout</h2>
@@ -45,10 +46,15 @@
 
 <h3>Implement Authentication</h3>
 <ol>
-    <li>Set up user routes</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>Create userRoute.js in routes folder</li>
+    <li>Create userController.js in controller folder</li>
+    <li>Set up loginUser & signupUser routes in userRoutes.js</li>
+    <li>Create loginUser & singupUser functions in userController.js</li>
+    <li>Hook up controller functions to the routes</li>
+    <li>Register the routes inside server.js</li>
+    <li>Create userModel</li>
+    <li>Require userModel in userController.js</li>
+    <li>Functionalize user sign up & hash passwords using Static methods</li>
+    <li>Validate Email and password</li>
 </ol>
 
