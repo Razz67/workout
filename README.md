@@ -38,9 +38,12 @@
     <li>Add functionality for CRUD operations and state management</li>
 </ul>
 
+<h2>Home Screen layout</h2>
+<img src="assets/homescreen.png" alt="home screen" />
+
 <h3>Implement Authentication</h3>
 <ol>
-    <li></li>
+    <li>Set up user routes</li>
     <li></li>
     <li></li>
     <li></li>
