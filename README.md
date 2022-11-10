@@ -58,6 +58,6 @@
     <li>Validate Email and password</li>
     <li>Implement JWT</li>
     <li>Create login and sign up forms</li>
-    <li></li>
+    <li>Create sign up hook to connect sign up form to the db</li>
 </ol>
 

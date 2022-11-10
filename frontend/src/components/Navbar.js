@@ -3,16 +3,17 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 
 function MyNavbar() {
 	return (
-		<Navbar bg="dark" expand="lg">
+		<Navbar bg="dark" expand="md">
 			<Container>
 				<Navbar.Brand>
-					<Link to='/'>
-					<h1 className="brand">Work It Out</h1>
+					<Link to="/">
+						<h1 className="brand">Work It Out</h1>
 					</Link>
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="me-auto">
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="me-auto"></Nav>
+					<Nav className="navbar-right bg-faded">
 						<Link to="/music" className="nav-link">
 							Muzik
 						</Link>

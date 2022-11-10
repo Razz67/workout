@@ -1,17 +1,20 @@
+// useSignup.js hook is used to handle this signup page.
+import { useSignup } from "../hooks/useSignup";
 import { useState } from "react";
 
 const Signup = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const { isLoading, error, signup } = useSignup("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log(email, password);
+		await signup(email, password);
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="p-4">
+		<form className="p-4 signup" onSubmit={handleSubmit} >
 			<h3>Sign Up</h3>
 			<div className="form-group">
 				<label>Email address</label>
@@ -20,6 +23,7 @@ const Signup = () => {
 					type="email"
 					className="form-control"
 					id="email"
+					autoComplete="username email"
 					value={email}
 					placeholder="email@example.com"
 				/>
@@ -36,11 +40,15 @@ const Signup = () => {
 					className="form-control"
 					id="password"
 					value={password}
+					autoComplete="username password"
 					placeholder="Password"
 				/>
 			</div>
 
-			<button className="btn btn-primary">Sign Up</button>
+			<button disabled={isLoading} className="btn btn-primary">
+				Sign Up
+			</button>
+			{error && <div className="error alert alert-danger mt-3">{error}</div>}
 		</form>
 	);
 };

@@ -7,10 +7,11 @@ const Login = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		console.log(email, password);
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="p-4">
+		<form onSubmit={handleSubmit} className="p-4 login">
 			<h3>Login</h3>
 			<div className="form-group">
 				<label>Email address</label>
@@ -19,12 +20,10 @@ const Login = () => {
 					type="email"
 					className="form-control"
 					id="email"
+					autoComplete="username email"
 					value={email}
 					placeholder="email@example.com"
 				/>
-				<small id="emailHelp" className="form-text text-muted">
-					We'll never share your email with anyone else.
-				</small>
 			</div>
 
 			<div className="form-group">
@@ -34,6 +33,7 @@ const Login = () => {
 					type="password"
 					className="form-control"
 					id="password"
+					autoComplete="username email"
 					value={password}
 					placeholder="Password"
 				/>
@@ -45,3 +45,4 @@ const Login = () => {
 };
 
 export default Login;
+// dattrazz67@gmail.com Razz73742$
