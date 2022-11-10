@@ -56,5 +56,8 @@
     <li>Require userModel in userController.js</li>
     <li>Functionalize user sign up & hash passwords using Static methods</li>
     <li>Validate Email and password</li>
+    <li>Implement JWT</li>
+    <li></li>
+    <li></li>
 </ol>
 
