@@ -57,7 +57,7 @@
     <li>Functionalize user sign up & hash passwords using Static methods</li>
     <li>Validate Email and password</li>
     <li>Implement JWT</li>
-    <li></li>
+    <li>Create login and sign up forms</li>
     <li></li>
 </ol>
 
