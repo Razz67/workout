@@ -61,7 +61,7 @@
     <li>Create sign up hook to connect sign up form to the db</li>
     <li>Create logout functionality(useLogout hook)</li>
     <li>Create login functionality (useLogin hook)</li>
-    <li></li>
+    <li>Set initial state for the app</li>
     <li></li>
     <li></li>
     <li></li>

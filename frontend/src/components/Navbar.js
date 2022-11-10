@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { useLogout }  from "../hooks/useLogout";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
+import "../components/styles/navbar.css";
+
 
 const MyNavbar = () => {
-
 	const { logout } = useLogout();
+	const { user } = useAuthContext();
 
 	const handleClick = () => {
 		logout();
-	}
-
+	};
 
 	return (
-		<Navbar bg="dark" expand="md">
+		<Navbar className="nav" bg="dark" expand="md">
 			<Container>
 				<Navbar.Brand>
 					<Link to="/">
@@ -21,27 +23,44 @@ const MyNavbar = () => {
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="me-auto"></Nav>
-					<Nav className="navbar-right bg-faded">
-						<Link to="/music" className="nav-link">
-							Muzik
-						</Link>
-						<Link to="/login" className="nav-link">
-							Login
-						</Link>
-						<Link to="signup" className="nav-link">
-							Sign Up
-						</Link>
-						<Link>
-							<button className="nav-link btn btn-danger" onClick={handleClick}>
-								Log Out
-							</button>
-						</Link>
+				<Nav className="me-auto"></Nav>
+				<Nav className="me-auto"></Nav>
+				<Nav className="me-auto"></Nav>
+				<Nav className="me-auto"></Nav>
+					<Nav className="me-auto">
+					{!user && (
+						<div>
+							<Nav className="navbar-right bg-faded">
+								<Link to="/music" className="nav-link">
+									Muzik
+								</Link>
+
+								<Link to="/login" className="nav-link">
+									Login
+								</Link>
+								<Link to="signup" className="nav-link">
+									Sign Up
+								</Link>
+							</Nav>
+						</div>
+					)}
+						{user && (
+							<div className="flex">
+								<button
+									className="nav-link btn btn-danger"
+									onClick={handleClick}
+								>
+									Log Out
+								</button>
+								<span id="email">{user.email}</span>
+							</div>
+						)}
 					</Nav>
+
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
 	);
-}
+};
 
 export default MyNavbar;

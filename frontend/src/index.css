@@ -20,33 +20,7 @@ body {
   background-color: #f8f9fa;
 }
 
-h1.brand {
-  color: #fff;
-}
-
-h1.brand a {
-  text-decoration: none;
-}
-
-
-a.nav-link {
-  color: rgb(30, 238, 110);
-  font-size: 1.3em;
-}
-
-a.nav-link.active {
-  color: var(--bs-teal);
-}
-
-a.nav-link:hover {
-  color: var(--bs-purple);
-}
-
-
-button.navbar-toggler {
-  border: 3px solid var(--bs-teal);
-  background-color: #fff;
-}
+/* nav bar */
 
 
 

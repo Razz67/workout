@@ -1,0 +1,54 @@
+:root {
+    --primary: #1aac83;
+    --error: #ff0000;
+}
+
+#email {
+    display: flex;
+    flex-wrap: nowrap;
+    color: var(--primary);
+}
+
+h1.brand {
+    color: #fff;
+    justify-content: left;
+}
+
+h1.brand a {
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: baseline;
+}
+
+  nav button {
+    background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  }
+
+a.nav-link {
+    color: rgb(30, 238, 110);
+    font-size: 1.3em;
+}
+
+a.nav-link.active {
+    color: var(--bs-teal);
+}
+
+a.nav-link:hover {
+    color: var(--bs-purple);
+}
+
+
+button.navbar-toggler {
+  border: 3px solid var(--bs-teal);
+  background-color: #fff;
+}
