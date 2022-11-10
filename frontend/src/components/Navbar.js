@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { useLogout }  from "../hooks/useLogout";
 
-function MyNavbar() {
+const MyNavbar = () => {
+
+	const { logout } = useLogout();
+
+	const handleClick = () => {
+		logout();
+	}
+
+
 	return (
 		<Navbar bg="dark" expand="md">
 			<Container>
@@ -22,6 +31,11 @@ function MyNavbar() {
 						</Link>
 						<Link to="signup" className="nav-link">
 							Sign Up
+						</Link>
+						<Link>
+							<button className="nav-link btn btn-danger" onClick={handleClick}>
+								Log Out
+							</button>
 						</Link>
 					</Nav>
 				</Navbar.Collapse>

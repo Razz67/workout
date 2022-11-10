@@ -59,5 +59,12 @@
     <li>Implement JWT</li>
     <li>Create login and sign up forms</li>
     <li>Create sign up hook to connect sign up form to the db</li>
+    <li>Create logout functionality(useLogout hook)</li>
+    <li>Create login functionality (useLogin hook)</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
 </ol>
 
