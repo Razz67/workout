@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import MediaComponent from "../components/Media";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
 import {WorkoutDetails} from "../components/WorkoutDetails";
@@ -9,10 +10,16 @@ import '../components/styles/home.css'
 
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
+	const { user } = useAuthContext();
 
 	useEffect(() => {
 		const fetchWorkouts = async () => {
-			const response = await fetch("http://localhost:5000/api/workouts");
+			const response = await fetch("http://localhost:5000/api/workouts", {
+				headers: {
+					'Authorization': `Bearer ${user.token}`
+				}
+			})
+			
 			const json = await response.json();
 
 			if (response.ok) {
@@ -20,8 +27,12 @@ const Home = () => {
 			}
 		};
 
-		fetchWorkouts();
-	}, [dispatch]);
+		// If there is a user, fetch workouts
+		if (user) {
+		fetchWorkouts()
+		}
+	}, [dispatch, user])
+
 
 	return (
 		<>

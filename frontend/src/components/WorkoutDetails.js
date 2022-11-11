@@ -2,15 +2,24 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { Card } from "react-bootstrap";
 import './styles/workoutForm.css'
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export const WorkoutDetails = ({ workout }) => {
 	const { dispatch } = useWorkoutsContext();
+	const { user } = useAuthContext();
 
 	const handleClick = async () => {
+
+		if (!user) {
+			return;
+		}
 		const response = await fetch(
 			"http://localhost:5000/api/workouts/" + workout._id,
 			{
 				method: "DELETE",
+				headers: {
+					'Authorization': `Bearer ${user.token}`
+				}
 			}
 		);
 		const json = await response.json();
