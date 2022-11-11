@@ -62,8 +62,8 @@
     <li>Create logout functionality(useLogout hook)</li>
     <li>Create login functionality (useLogin hook)</li>
     <li>Set initial state for the app</li>
-    <li></li>
-    <li></li>
+    <li>Make sure only logged in users can access the data(middleware)</li>
+    <li>Authorize Requests</li>
     <li></li>
     <li></li>
 </ol>

@@ -8,8 +8,12 @@ const {
     updateWorkout,
     deleteWorkout
 } = require('../controllers/workoutController');
+const requireAuth = require('../middleware/requireAuth');
 
 const router = express.Router();
+
+// Require authorization for all routes
+router.use(requireAuth);
 
 // connect model data(workoutModel.js) to the routes
 // Get all workouts
