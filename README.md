@@ -63,8 +63,8 @@
     <li>Create login functionality (useLogin hook)</li>
     <li>Set initial state for the app</li>
     <li>Make sure only logged in users can access the data(middleware)</li>
-    <li>Authorize Requests</li>
-    <li></li>
+    <li>Authorize Requests add redirects to routes</li>
+    <li>Assign individual workouts to users id</li>
     <li></li>
 </ol>
 

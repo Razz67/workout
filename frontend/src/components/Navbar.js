@@ -31,10 +31,6 @@ const MyNavbar = () => {
 					{!user && (
 						<div>
 							<Nav className="navbar-right bg-faded">
-								<Link to="/music" className="nav-link">
-									Muzik
-								</Link>
-
 								<Link to="/login" className="nav-link">
 									Login
 								</Link>
@@ -45,6 +41,11 @@ const MyNavbar = () => {
 						</div>
 					)}
 						{user && (
+							<>
+								<Link to="/music" className="nav-link">
+									Muzik
+								</Link>
+								
 							<div className="flex">
 								<button
 									className="nav-link btn btn-danger"
@@ -54,6 +55,7 @@ const MyNavbar = () => {
 								</button>
 								<span id="email">{user.email}</span>
 							</div>
+							</>
 						)}
 					</Nav>
 

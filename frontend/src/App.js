@@ -3,24 +3,50 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useAuthContext } from "./hooks/useAuthContext";
 
 // Pages && Components
 import Home from './pages/Home';
 import MyNavbar from './components/Navbar';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Music from './pages/Music';
 
 function App() {
+
+	const { user } = useAuthContext();
+
+
   return (
 		<div className="App">
 			<Router>
-			<MyNavbar />
+				<MyNavbar />
 				<div className="pages">
 					<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/signup" element={<Signup />} />
+						{/* user is logged in navigate to home if not go to login */}
+						<Route
+							path="/"
+							element={user ? <Home /> : <Navigate to="/login" />}
+						/>
+						
+						{/* if user is not logged in navigate to login */}
+						<Route
+							path="/login"
+							element={!user ? <Login /> : <Navigate to="/" />}
+						/>
+
+						{/* if user is not logged in navigate to signup */}
+						<Route
+							path="/signup"
+							element={!user ? <Signup /> : <Navigate to="/" />}
+						 />
+
+						{/* if user is logged in make music accessible if not go to login */}
+						<Route
+							path="/music"
+							element={user ? <Music /> : <Navigate to="/login" />}
+						/>
 					</Routes>
 				</div>
 			</Router>

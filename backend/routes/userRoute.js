@@ -11,4 +11,7 @@ router.post("/login", loginUser);
 // signup route
 router.post("/signup", signupUser);
 
+// music route
+
+
 module.exports = router;
