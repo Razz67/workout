@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+
 /* homepage */
 .home {
     display: grid;
@@ -10,6 +12,12 @@
 
 header {
     margin-bottom: 30px;
+}
+
+.heading p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 #pumped {
@@ -69,4 +77,47 @@ header {
     border-radius: 50%;
     color: #333;
 }
+
+/* Video Background */
+.home-video-holder {
+    position: relative;
+    background-color: black;
+    height: calc(100vh - 72px);
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.home-video-holder video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.home-video-content {
+    position: relative;
+    z-index: 15;
+}
+
+.home-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+}
+
 

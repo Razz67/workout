@@ -1,9 +1,14 @@
+import MyNavbar from "../components/Navbar";
+
+
+
 const Music = () => {
+
     return (
-        <div>
-        <h1>Music</h1>
-        </div>
-    );
+			<div>
+				<MyNavbar />
+				</div>
+		);
 };
 
 export default Music;

@@ -1,6 +1,7 @@
 // useSignup.js hook is used to handle this signup page.
 import { useSignup } from "../hooks/useSignup";
 import { useState } from "react";
+import SignupVideo from "../components/SignupVideo";
 
 const Signup = () => {
 	const [email, setEmail] = useState("");
@@ -14,6 +15,13 @@ const Signup = () => {
 	};
 
 	return (
+
+					<div className="login-video-holder">
+				<div className="login-video-overlay">
+					<div className="login-video-content h-100">
+						<SignupVideo />
+					</div>
+				</div>
 		<form className="p-4 signup" onSubmit={handleSubmit} >
 			<h3>Sign Up</h3>
 			<div className="form-group">
@@ -45,11 +53,12 @@ const Signup = () => {
 				/>
 			</div>
 
-			<button disabled={isLoading} className="btn btn-primary">
+			<button disabled={isLoading} className="btn">
 				Sign Up
 			</button>
 			{error && <div className="error alert alert-danger mt-3">{error}</div>}
 		</form>
+		</div>
 	);
 };
 

@@ -1,7 +1,7 @@
 import Video from '../assets/rope.mp4'
 import './styles/media.css'
 
-const MediaComponent = () => {
+const HomeVideo = () => {
     return (
 			<div>
 				<video
@@ -15,4 +15,4 @@ const MediaComponent = () => {
 		);
 }
 
-export default MediaComponent
+export default HomeVideo

@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import MediaComponent from "../components/Media";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
 import {WorkoutDetails} from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import '../components/styles/home.css'
+import HomeVideo from "../components/HomeVideo";
 
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
@@ -38,14 +38,13 @@ const Home = () => {
 		<>
 			<header className="heading" style={{ textAlign: "center" }}>
 				<h1>Welcome to Work It Out</h1>
-				<p>
-					Where you can get your groove on and <span id="pumped"><strong>pump</strong></span> up the jams
+				<p>Get	<span id="pumped"><strong>pumped</strong></span> and jam while your doing it
 				</p>
 			</header>
-			<div className="video-holder">
-				<div className="video-overlay">
-					<div className="video-content container h-100">
-						<MediaComponent />
+			<div className="home-video-holder">
+				<div className="home-video-overlay">
+					<div className="home-video-content container h-100">
+						<HomeVideo /> 
 					</div>
 				</div>
 				<div className="home">

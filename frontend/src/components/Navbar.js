@@ -53,7 +53,7 @@ const MyNavbar = () => {
 								>
 									Log Out
 								</button>
-								<span id="email">{user.email}</span>
+								<span id="email">Logged in as: {user.email}</span>
 							</div>
 							</>
 						)}
