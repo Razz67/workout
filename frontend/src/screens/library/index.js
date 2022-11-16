@@ -1,4 +1,3 @@
-import '../components/styles/music.css'
 
 export default function Library() {
 	return (

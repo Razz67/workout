@@ -1,5 +1,4 @@
 // CSS: frontend
-import "./components/styles/music.css";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -17,18 +16,13 @@ import Home from "./pages/Home";
 import MyNavbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Music from "./pages/Music";
-import Library from "./screens/library";
-import Feed from "./screens/feed";
-import Trending from "./screens/trending";
-import Player from "./screens/player";
-import Favorites from "./screens/favorites";
+import MusicHome from "./screens/home/index";
 
 function App() {
 	const { user } = useAuthContext();
 
 	return (
-		<div className="App main-body">
+		<div className="App">
 			<Router>
 				<MyNavbar />
 				<div className="pages">
@@ -53,15 +47,11 @@ function App() {
 
 						{/* if user is logged in make music accessible if not go to login */}
 						<Route
-							path="/music"
-							element={user ? <Music /> : <Navigate to="/home" />}
+							path="/music/*"
+							element={user ? <MusicHome /> : <Navigate to="/login" />}
 						/>
+
 						
-						<Route path="/" element={<Library />} />
-						<Route path="/feed" element={<Feed />} />
-						<Route path="/trending" element={<Trending />} />
-						<Route path="/player" element={<Player />} />
-						<Route path="/favorite" element={<Favorites />} />
 					</Routes>
 				</div>
 			</Router>
