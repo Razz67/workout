@@ -30,7 +30,8 @@ export const WorkoutDetails = ({ workout }) => {
 
 	return (
 		<>
-			<div className="workout-details">
+			<div 
+			className="workout-details">
 				<Card>
 					<Card.Body>
 						<Card.Title>

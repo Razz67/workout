@@ -38,9 +38,9 @@ header {
 }
 
 .pages {
-    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    margin: 0 auto;
 }
 
 .workouts {

@@ -1,6 +1,7 @@
 import "./sidebar.css";
 import SidebarButton from "./sidebarButton";
 
+
 // Icons
 import { MdFavorite } from "react-icons/md";
 import { FaGripfire, FaPlay } from "react-icons/fa";
@@ -18,7 +19,7 @@ export default function Sidebar() {
 				alt="profile"
 			/>
 			<div>
-				<SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
+				<SidebarButton title="Feed" to="/Feed" icon={<MdSpaceDashboard />} />
 
 				<SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} />
 

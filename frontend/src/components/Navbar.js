@@ -13,7 +13,7 @@ const MyNavbar = () => {
 	};
 
 	return (
-		<Navbar className="nav" bg="dark" expand="md">
+		<Navbar className="nav"  expand="md">
 			<Container>
 				<Navbar.Brand>
 					<Link to="/">
@@ -42,7 +42,7 @@ const MyNavbar = () => {
 						{user && (
 							<>
 								<Link to="/music" className="nav-link">
-									Muzik
+									<h3>Muzik</h3>
 								</Link>
 
 								<div className="flex">
