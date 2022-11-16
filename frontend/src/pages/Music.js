@@ -1,14 +1,8 @@
-import MyNavbar from "../components/Navbar";
+import Sidebar from "../components/sidebar/index";
+import '../components/styles/music.css'
 
-
-
-const Music = () => {
-
-    return (
-			<div>
-				<MyNavbar />
-				</div>
-		);
-};
-
-export default Music;
+export default function Music() {
+	return (
+		<div><Sidebar /></div>
+	);
+}

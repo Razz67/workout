@@ -1,7 +1,7 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { Card } from "react-bootstrap";
-import './styles/workoutForm.css'
+import "./styles/workoutForm.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export const WorkoutDetails = ({ workout }) => {
@@ -9,7 +9,6 @@ export const WorkoutDetails = ({ workout }) => {
 	const { user } = useAuthContext();
 
 	const handleClick = async () => {
-
 		if (!user) {
 			return;
 		}
@@ -18,8 +17,8 @@ export const WorkoutDetails = ({ workout }) => {
 			{
 				method: "DELETE",
 				headers: {
-					'Authorization': `Bearer ${user.token}`
-				}
+					Authorization: `Bearer ${user.token}`,
+				},
 			}
 		);
 		const json = await response.json();
@@ -31,30 +30,39 @@ export const WorkoutDetails = ({ workout }) => {
 
 	return (
 		<>
-		<div className="workout-details">
-			<Card>
-				<Card.Body>
-					<Card.Title>
-						<h4>{workout.title}</h4>
-					</Card.Title>
-					<Card.Title>
-						<strong>Load: </strong>
-						{workout.load}(lbs)
-					</Card.Title>
-					<Card.Title>
-						<strong>Reps: </strong>
-						{workout.reps}
-					</Card.Title>
-					<Card.Title>
-						<strong>Sets: </strong>
-						{workout.sets}
-					</Card.Title>
+			<div className="workout-details">
+				<Card>
+					<Card.Body>
+						<Card.Title>
+							<h4>{workout.title}</h4>
+						</Card.Title>
+						<Card.Title>
+							<strong>Load: </strong>
+							{workout.load}(lbs)
+						</Card.Title>
+						<Card.Title>
+							<strong>Reps: </strong>
+							{workout.reps}
+						</Card.Title>
+						<Card.Title>
+							<strong>Sets: </strong>
+							{workout.sets}
+						</Card.Title>
 
-					<p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
-					<span className="material-symbols-outlined trash" onClick={handleClick}>delete</span>
-				</Card.Body>
-			</Card>
-		</div>
+						<p>
+							{formatDistanceToNow(new Date(workout.createdAt), {
+								addSuffix: true,
+							})}
+						</p>
+						<span
+							className="material-symbols-outlined trash"
+							onClick={handleClick}
+						>
+							delete
+						</span>
+					</Card.Body>
+				</Card>
+			</div>
 		</>
 	);
 };

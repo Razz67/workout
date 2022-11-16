@@ -3,10 +3,10 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
-import {WorkoutDetails} from "../components/WorkoutDetails";
+import { WorkoutDetails } from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
-import '../components/styles/home.css'
-import HomeVideo from "../components/HomeVideo";
+import "../components/styles/home.css";
+import HomeBackground from "../components/HomeBackground";
 
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
@@ -16,10 +16,10 @@ const Home = () => {
 		const fetchWorkouts = async () => {
 			const response = await fetch("http://localhost:5000/api/workouts", {
 				headers: {
-					'Authorization': `Bearer ${user.token}`
-				}
-			})
-			
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
+
 			const json = await response.json();
 
 			if (response.ok) {
@@ -29,22 +29,26 @@ const Home = () => {
 
 		// If there is a user, fetch workouts
 		if (user) {
-		fetchWorkouts()
+			fetchWorkouts();
 		}
-	}, [dispatch, user])
-
+	}, [dispatch, user]);
 
 	return (
 		<>
 			<header className="heading" style={{ textAlign: "center" }}>
 				<h1>Welcome to Work It Out</h1>
-				<p>Get	<span id="pumped"><strong>pumped</strong></span> and jam while your doing it
+				<p>
+					Get{" "}
+					<span id="pumped">
+						<strong>pumped</strong>
+					</span>{" "}
+					and jam while your doing it
 				</p>
 			</header>
 			<div className="home-video-holder">
 				<div className="home-video-overlay">
 					<div className="home-video-content container h-100">
-						<HomeVideo /> 
+						<HomeBackground />
 					</div>
 				</div>
 				<div className="home">

@@ -1,39 +1,36 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
-const workoutsRoute = require("./routes/workoutRouter");
+const workoutRoutes = require("./routes/workoutRoutes");
 const userRoutes = require("./routes/userRoute");
-const cors = require("cors");
+const cors = require('cors')
 
-
-// Create express app
+// express app
 const app = express();
 
-// Middleware
-// allows us to use json returned from the request in our routes
-// any request that comes in, it will parse the body and put it on req.body
+// middleware
 app.use(express.json());
 app.use(cors());
 
-// Just to see requests path and method in the console
 app.use((req, res, next) => {
 	console.log(req.path, req.method);
 	next();
 });
 
-// register all requests from (Routes)
-app.use("/api/workouts", workoutsRoute);
+// routes
+app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 
-// Connect to MONGO_DB
+// connect to db
 mongoose
 	.connect(process.env.MONGO_DB)
 	.then(() => {
-		// Then listen for requests(port 5000)
+		// listen for requests
 		app.listen(process.env.PORT, () => {
-			console.log("Connected to Mongo_Db and Listening on port ", process.env.PORT);
+			console.log("connected to db & listening on port", process.env.PORT);
 		});
 	})
-	.catch((err) => {
-		console.log(err);
+	.catch((error) => {
+		console.log(error);
 	});

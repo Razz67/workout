@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import './styles/workoutForm.css'
+import "./styles/workoutForm.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const WorkoutForm = () => {
@@ -15,7 +15,7 @@ const WorkoutForm = () => {
 	const { user } = useAuthContext();
 
 	const handleSubmit = async (e) => {
-		e.preventDefault()
+		e.preventDefault();
 
 		if (!user) {
 			setError("You must be logged in to create a workout");

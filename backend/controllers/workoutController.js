@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 // Create functions for the routes
 // Get all workouts from the database
 const getAllWorkouts = async (req, res) => {
-	const user_id = req.user._id
+	const user_id = req.user._id;
 	try {
-		const workouts = await Workout.find({ user_id}).sort({ createdAt: -1 }); // Sort by date
+		const workouts = await Workout.find({ user_id }).sort({ createdAt: -1 }); // Sort by date
 		res.status(200).json(workouts);
 	} catch (error) {
 		res.status(400).json({ error: error.message });
@@ -39,37 +39,37 @@ const getOneWorkout = async (req, res) => {
 const createWorkout = async (req, res) => {
 	const { title, reps, load, sets } = req.body;
 
-	let empty = []
+	let empty = [];
 
-	if(!title) {
-		empty.push('title')
+	if (!title) {
+		empty.push("title");
 	}
 
-	if(!load) {
-		empty.push('load')
+	if (!load) {
+		empty.push("load");
 	}
 
-	if(!reps) {
-		empty.push('reps')
+	if (!reps) {
+		empty.push("reps");
 	}
 
-	if(!sets) {
-		empty.push('sets')
+	if (!sets) {
+		empty.push("sets");
 	}
 
-	if(empty.length > 0) {
-		return res.status(400).json({error: "Please fill all fields", empty})
+	if (empty.length > 0) {
+		return res.status(400).json({ error: "Please fill all fields", empty });
 	}
 
 	// Add data to the database
 	try {
-		const user_id = req.user._id
+		const user_id = req.user._id;
 		const workout = await Workout.create({
 			title,
 			load,
 			reps,
 			sets,
-			user_id
+			user_id,
 		});
 		res.status(200).json(workout);
 	} catch (error) {
@@ -87,7 +87,7 @@ const deleteWorkout = async (req, res) => {
 		return res.status(404).json({ error: "No workout with that id" });
 	}
 
-    // if id is valid, delete the workout
+	// if id is valid, delete the workout
 	const workout = await Workout.findOneAndDelete({ _id: id });
 
 	// Check if the workout exists
@@ -108,17 +108,19 @@ const updateWorkout = async (req, res) => {
 		return res.status(404).json({ error: "No workout with that id" });
 	}
 
-	const workout = await Workout.findOneAndUpdate({_id: id}, {
-        ...req.body
-	});
+	const workout = await Workout.findOneAndUpdate(
+		{ _id: id },
+		{
+			...req.body,
+		}
+	);
 
 	// Check if the workout exists
 	if (!workout) {
 		return res.status(404).json({ error: "Workout not found" });
 	}
-    	res.status(200).json(workout);
+	res.status(200).json(workout);
 };
-
 
 // Export the functions
 module.exports = {

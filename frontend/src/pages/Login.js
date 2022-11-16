@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LoginVideo from "../components/LoginVideo";
+import LoginBackground from "../components/LoginBackground";
 import { useLogin } from "../hooks/useLogin";
 import "../components/styles/media.css";
 
@@ -20,7 +20,7 @@ const Login = () => {
 			<div className="login-video-holder">
 				<div className="login-video-overlay">
 					<div className="login-video-content h-100">
-						<LoginVideo />
+						<LoginBackground />
 					</div>
 				</div>
 				<form onSubmit={handleSubmit} className="p-4 login">

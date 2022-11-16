@@ -4,7 +4,6 @@ import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../components/styles/navbar.css";
 
-
 const MyNavbar = () => {
 	const { logout } = useLogout();
 	const { user } = useAuthContext();
@@ -23,42 +22,41 @@ const MyNavbar = () => {
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className="me-auto"></Nav>
-				<Nav className="me-auto"></Nav>
-				<Nav className="me-auto"></Nav>
-				<Nav className="me-auto"></Nav>
+					<Nav className="me-auto"></Nav>
+					<Nav className="me-auto"></Nav>
+					<Nav className="me-auto"></Nav>
+					<Nav className="me-auto"></Nav>
 					<Nav className="me-auto">
-					{!user && (
-						<div>
-							<Nav className="navbar-right bg-faded">
-								<Link to="/login" className="nav-link">
-									Login
-								</Link>
-								<Link to="signup" className="nav-link">
-									Sign Up
-								</Link>
-							</Nav>
-						</div>
-					)}
+						{!user && (
+							<div>
+								<Nav className="navbar-right bg-faded">
+									<Link to="/login" className="nav-link">
+										Login
+									</Link>
+									<Link to="signup" className="nav-link">
+										Sign Up
+									</Link>
+								</Nav>
+							</div>
+						)}
 						{user && (
 							<>
 								<Link to="/music" className="nav-link">
 									Muzik
 								</Link>
-								
-							<div className="flex">
-								<button
-									className="nav-link btn btn-danger"
-									onClick={handleClick}
-								>
-									Log Out
-								</button>
-								<span id="email">Logged in as: {user.email}</span>
-							</div>
+
+								<div className="flex">
+									<button
+										className="nav-link btn btn-danger"
+										onClick={handleClick}
+									>
+										Log Out
+									</button>
+									<span id="email">Logged in as: {user.email}</span>
+								</div>
 							</>
 						)}
 					</Nav>
-
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

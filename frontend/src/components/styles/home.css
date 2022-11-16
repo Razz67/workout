@@ -28,10 +28,11 @@ header {
     color: #ff0000;
 }
 
-#pumped:hover{
+#pumped:hover {
     color: var(--primary);
     font-size: 380%;
 }
+
 .card-title {
     color: #000;
 }
@@ -45,6 +46,7 @@ header {
 .workouts {
     z-index: 1;
 }
+
 .workout-details {
     background: #fff;
     opacity: 0.8;
@@ -119,5 +121,3 @@ header {
     opacity: 0.6;
     z-index: 1;
 }
-
-

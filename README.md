@@ -1,70 +1,70 @@
-<h1>Per Scholas Capston Project</h1>
-<h2>Project Name: Work It Out</h2>
-<h3>Project Description</h3>
-<p>Work It Out is an app where the user can create, read, update and delete there own personal workout plan and, while working out, allow them to listen to their favorite work music</p>
+# Getting Started with Create React App
 
-<h2>How I created this app</h2>
-<p>I created this app by seperating it into three different parts:</p>
-<ol>
-    <li>Backend</li>
-    <li>Frontend</li>
-    <li>Authorization</li>
-</ol>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<h3>Backend Process</h3>
-<ol>
-    <li>Setup Express</li>
-    <li>Set up API routes
-    <ul>
-        <li>GET all workouts: router.get('/')</li>
-        <li>GET a single workout; router.get('/':id)</li>
-        <li>Create a new workout: router.post('/':id)</li>
-        <li>Update a workout: router.patch('/':id)</li>
-        <li>Delete a workout: router.delete('/':id)</li>
-    </ul>
-    </li>
+## Available Scripts
 
-    <li>Set up MongoDB</li>
-    <li>Set up Schema</li>
-    <li>create workoutRouter.js</li>
-    <li>Setup routes</li>
-    <li>Setup controllers</li>
-</ol>
+In the project directory, you can run:
 
-<h3>Frontend Process</h3>
-<ul>
-    <li>Create react app in frontend folder</li>
-    <li>Use Axios to get data from models</li>
-    <li>Created a form</li>
-    <li>Add functionality for CRUD operations and state management</li>
-    <li>Styled the home page</li>
-</ul>
+### `npm start`
 
-<h2>Home Screen layout</h2>
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-![homescreen](https://user-images.githubusercontent.com/6307334/200939804-3614805b-0ac2-474d-a94b-f8949a3f47b6.png)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-<h3>Implement Authentication</h3>
-<ol>
-    <li>Create userRoute.js in routes folder</li>
-    <li>Create userController.js in controller folder</li>
-    <li>Set up loginUser & signupUser routes in userRoutes.js</li>
-    <li>Create loginUser & singupUser functions in userController.js</li>
-    <li>Hook up controller functions to the routes</li>
-    <li>Register the routes inside server.js</li>
-    <li>Create userModel</li>
-    <li>Require userModel in userController.js</li>
-    <li>Functionalize user sign up & hash passwords using Static methods</li>
-    <li>Validate Email and password</li>
-    <li>Implement JWT</li>
-    <li>Create login and sign up forms</li>
-    <li>Create sign up hook to connect sign up form to the db</li>
-    <li>Create logout functionality(useLogout hook)</li>
-    <li>Create login functionality (useLogin hook)</li>
-    <li>Set initial state for the app</li>
-    <li>Make sure only logged in users can access the data(middleware)</li>
-    <li>Authorize Requests add redirects to routes</li>
-    <li>Assign individual workouts to users id</li>
-    <li></li>
-</ol>
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
