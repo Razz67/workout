@@ -1,4 +1,4 @@
-Netlify site: https://strong-daifuku-afb494.netlify.app/
+See it live: https://stephinel.com/
 
 ## Work It Out is a fullstack Mern Application created for Per Scholas Capston Project
 
