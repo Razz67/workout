@@ -4,7 +4,7 @@ import { useLogin } from "../hooks/useLogin";
 import "../components/styles/media.css";
 
 const Login = () => {
-	// set up the state for the form
+	// set up the states for the form
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
