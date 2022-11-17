@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+Netlify site: https://strong-daifuku-afb494.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Work It Out is a fullstack Mern Project created for Per Scholas Capston Project
 
-## Available Scripts
+# Entrance Page;
+![Screenshot 2022-11-17 101054](https://user-images.githubusercontent.com/6307334/202483975-b848028b-a4f8-445f-8fe9-3dfbf1b522d3.png)
 
-In the project directory, you can run:
+# Sign up page:
+![signup](https://user-images.githubusercontent.com/6307334/202490345-b75004c1-3a08-45f4-9283-7511fa9d7990.png)
 
-### `npm start`
+# Form Page
+![form_page](https://user-images.githubusercontent.com/6307334/202490884-718bccfc-bcc7-4418-bb7b-c9b4ba0d5d9c.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Spotify login page
+![spitify](https://user-images.githubusercontent.com/6307334/202491171-9d9b8969-1e58-4549-a5f6-c2e7875cb2c1.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Spotify site login
+![spotify_login](https://user-images.githubusercontent.com/6307334/202491612-57ffca0a-3a3c-469a-88e6-b73e7eb02092.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project Details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔴 Mandatory To Pass:
+MVP - Minimum Viable Product
+For this project, you will be making another full CRUD app using the technologies outlined below.
+<ul>
+<li>A working full-stack application, built by you, using the MERN stack: Node.js, MongoDB/Mongoose, Express and React.</li>
+<li>At least two models with full CRUD.</li>
+<li>Follow proper MVC backend structure (models, controllers, routes in separate folders)</li>
+<li>As many pages and components as you need</li>
+<li>As many pages and components as you need</li>
+<li>Include sign up/login (authentication) functionality, with encrypted passwords & an authorization flow</li>
+<li>Use of axios and local storage for tokens</li>
+<li>Use of a CSS framework for styling (Bootstrap, MaterialUI, Skeleton, Tailwind, etc.)</li>
+<li>At least one GitHub commit per day (at least 15)</li>
+<li>Be deployed online and accessible to the public</li>
+<li>A README.md file (should include a link to your hosted working website)</li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Stretch goals:
+<ul>
+<li>Manage at least some part of state with the useReducer and useContext hooks (together) or ReduxLinks to an external site. (npm install @reduxjs/toolkit react-redux)</li> 
+<li>Pull from a third party API - either client side with AJAX or server-side with an NPM</li>
+</ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Stack
+<ul>
+<li>MongoDb</li>
+<li>Express</li>
+<li>React</li>
+<li>Node</li>
+</ul>
 
-### `npm run eject`
+# API
+<ul>
+<li>spotify api</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Dependencies
+<ul>
+<li>React</li>
+<li>React Router Dom</li>
+<li>Mongoose</li>
+<li>Axios</li>
+<li>Bootstrap/ React-bootstrap</li>
+<li>Cors</li>
+<li>bcrypt</li>
+<li>jsonwebtoken</li>
+<li>Validator</li>
+<li>React-icons</li>
+<li>date-fns(date formatter)</li>
+<li></li>
+</ul>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Future improvements
+1. Complete the music player app
+2. Allow user to add workouts to favorites
