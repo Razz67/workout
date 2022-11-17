@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.deeb6583.css",
+    "main.js": "/static/js/main.61d6da19.js",
+    "static/media/woman-lifting.mp4": "/static/media/woman-lifting.69bd0409a0532d13827e.mp4",
+    "static/media/kettlebell.mp4": "/static/media/kettlebell.d6cffc5967f0bec6eaea.mp4",
+    "static/media/rope.mp4": "/static/media/rope.dd6f909acd9307173be3.mp4",
+    "index.html": "/index.html",
+    "main.deeb6583.css.map": "/static/css/main.deeb6583.css.map",
+    "main.61d6da19.js.map": "/static/js/main.61d6da19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.deeb6583.css",
+    "static/js/main.61d6da19.js"
+  ]
+}
