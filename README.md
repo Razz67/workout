@@ -1,6 +1,6 @@
 Netlify site: https://strong-daifuku-afb494.netlify.app/
 
-## Work It Out is a fullstack Mern Project created for Per Scholas Capston Project
+## Work It Out is a fullstack Mern Application created for Per Scholas Capston Project
 
 # Entrance Page;
 ![Screenshot 2022-11-17 101054](https://user-images.githubusercontent.com/6307334/202483975-b848028b-a4f8-445f-8fe9-3dfbf1b522d3.png)
